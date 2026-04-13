@@ -117,31 +117,34 @@ public class Main {
         for (Account a : accArray) {
             a.display();
         }
-        System.out.println("1. Deposit  /n2. Withdraw  /n3. Check Balance  /n4. Exit  ");
-        int choice = sc.nextInt();
-        System.out.println("enter account index , 0 to " + (n - 1));
-        int index = sc.nextInt();
+        while (true) {
+            System.out.println("1. Deposit  \n2. Withdraw  \n 3. Check Balance  \n 4. Exit  ");
+            int choice = sc.nextInt();
+            System.out.println("enter account index , 0 to " + (n - 1));
+            int index = sc.nextInt();
 
-        switch (choice) {
-            case 1:
-                System.out.println("enter amount to deposit : ");
-                double amt = sc.nextDouble();
-                accArray[index].deposit(amt);
-                accArray[index].display();
-                break;
-            case 2:
-                System.out.println("enter amount to withdraw : ");
-                double ammt = sc.nextDouble();
-                accArray[index].withdraw(ammt);
-                accArray[index].display();
-                break;
-            case 3:
-                System.out.println("checking balance..");
-                System.out.println("ur balance is " + accArray[index].balance);
-                break;
-            case 4:
-                System.out.println("thanks! bye");
-                break;
+            switch (choice) {
+                case 1:
+                    System.out.println("enter amount to deposit : ");
+                    double amt = sc.nextDouble();
+                    accArray[index].deposit(amt);
+                    accArray[index].display();
+                    break;
+                case 2:
+                    System.out.println("enter amount to withdraw : ");
+                    double ammt = sc.nextDouble();
+                    accArray[index].withdraw(ammt);
+                    accArray[index].display();
+                    break;
+                case 3:
+                    System.out.println("checking balance..");
+                    System.out.println("ur balance is " + accArray[index].balance);
+                    break;
+                case 4:
+                    System.out.println("exiting...bye!");
+                    return;
+
+            }
         }
 
     }
